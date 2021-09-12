@@ -1,6 +1,10 @@
+SERVICE_CHARGE = 2
 TICKET_PRICE = 10
 
 tickets_remaining = 100
+
+def calculate_price(number_of_tickets):
+    return (number_of_tickets * TICKET_PRICE) + SERVICE_CHARGE
 
 while tickets_remaining >= 1:
     print("There are {} tickets remaining".format(tickets_remaining))
@@ -15,7 +19,7 @@ while tickets_remaining >= 1:
         print("Oh no, we ran into an issue. {}. Please Try again"
             .format(err))
     else:  
-        total_due = num_tickets * TICKET_PRICE
+        total_due = calculate_price(num_tickets)
         print("Total price due is ${}".format(total_due))
         permission = str(input("Would you like to proceed {}? (Y/N): "
             .format(user_name)))
