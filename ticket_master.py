@@ -23,10 +23,17 @@ while tickets_remaining >= 1:
         print("Total price due is ${}".format(total_due))
         permission = str(input("Would you like to proceed {}? (Y/N): "
             .format(user_name)))
-        if permission.lower() == "y":
-            #TODO: Gather credit card infromation and process it.
-            print("SOLD!")
-            tickets_remaining -= num_tickets
-        elif permission.lower() == "n":
-            print("Thank you for your interest {}".format(user_name))
+        while permission != "y" or "n":
+            if permission.lower() == "y":
+                #TODO: Gather credit card infromation and process it.
+                print("SOLD!")
+                tickets_remaining -= num_tickets
+                break
+            elif permission.lower() == "n":
+                print("Thank you for your interest {}".format(user_name))
+                break
+            else:
+                print("That's incorrect. Please answer with either y or n")
+                permission = str(input("Would you like to proceed {}? (Y/N): "
+                .format(user_name)))
 print("Sorry the tickets are all sold out!!! :-(")
