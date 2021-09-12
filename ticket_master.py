@@ -25,7 +25,12 @@ while tickets_remaining >= 1:
             .format(user_name)))
         while permission != "y" or "n":
             if permission.lower() == "y":
-                #TODO: Gather credit card infromation and process it.
+                #TODO: Error Handling for entering card information.
+                credit_card = str(input("{}, Please enter your credit card number: "
+                    .format(user_name)))
+                card_exp = str(input("Please enter the card's Expiry Date: "))
+                card_cvv = str(input("And, finally enter your CVV: "))
+                print("Processing...")
                 print("SOLD!")
                 tickets_remaining -= num_tickets
                 break
